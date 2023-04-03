@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='../../stylesheets/style.css' />
+    <title>Skills</title>
+</head>
+
+<%- include('../partials/header') %>
+
+<body>
+    
+<h2>Skills List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Years of Experience</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% skills.forEach(function(i) { %>
+      <tr>
+        <td><%= i.title %></td>
+        <td><%= i.yearsOfExp %></td>
+        <td><%= i.description.join(', ') %></td>
+        <td><a href="/skills/<%= i._id %>">Deets</a></td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+    
+</body>
+
+<%- include('../partials/footer') %>
+</html>
